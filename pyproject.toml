@@ -1,0 +1,11 @@
+[project]
+name = "creator-team-knowledge-bot"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.115", "openai>=1.50", "requests>=2.32", "uvicorn>=0.30"]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

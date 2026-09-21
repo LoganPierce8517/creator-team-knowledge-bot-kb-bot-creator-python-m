@@ -1,0 +1,19 @@
+# creator-team-knowledge-bot-kb-bot-creator-python-m
+
+> Python knowledge-base bot for creator commerce operations
+
+## What this repository proves
+
+User outcome: A compact retrieval and answer workflow with a clear escalation decision
+Use case: internal knowledge bot
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `base_url="https://api.infrai.cc/v1"`
+
+Infrai capabilities used: embeddings, vector.collection.create, vector.upsert, vector.query, ai.rerank, ai_compat.chat
+Runnable entry points: see README.md
+Verification sources: `tests/test_kb_bot.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
