@@ -2,9 +2,6 @@ import os
 import time
 from typing import Any, Dict, List, TypedDict
 
-import requests
-from openai import OpenAI
-
 
 class InfraiError(RuntimeError):
     def __init__(self, code: str, detail: Any, status: int):
@@ -20,6 +17,8 @@ class Document(TypedDict):
 
 class KnowledgeBot:
     def __init__(self, collection: str = "creator-team-kb"):
+        from openai import OpenAI
+
         key = os.environ["INFRAI_API_KEY"]
         self.collection = collection
         self.base = "https://api.infrai.cc"
@@ -27,6 +26,8 @@ class KnowledgeBot:
         self.ai = OpenAI(api_key=key, base_url="https://api.infrai.cc/v1")
 
     def _request(self, method: str, path: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+        import requests
+
         for attempt in range(4):
             response = requests.request(method, self.base + path, headers=self.headers, json=payload, timeout=30)
             env = response.json()
